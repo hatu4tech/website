@@ -100,7 +100,7 @@ export default function HatuaTechWebsite() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Banking for
+                Developing Products for
                 <span className="text-orange-500 block">Modern Africa</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
