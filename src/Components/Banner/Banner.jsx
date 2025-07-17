@@ -252,7 +252,7 @@ export default function HatuaTechWebsite() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
               <img 
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+                src="/banner-image.jpg"
                 alt="African business professionals collaborating"
                 className="w-full h-96 object-cover rounded-3xl shadow-2xl"
               />
