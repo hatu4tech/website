@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, Shield, TrendingUp, Users, Globe, ArrowRight, Mail, Phone, MapPin, Menu, X, Zap, DollarSign } from 'lucide-react';
 
+// Smooth scroll utility
+const smoothScrollTo = (elementId) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
+
 export default function HatuaTechWebsite() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,10 +76,34 @@ export default function HatuaTechWebsite() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-orange-500 transition-colors">Home</a>
-              <a href="#services" className="text-gray-700 hover:text-orange-500 transition-colors">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-orange-500 transition-colors">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
+              <a 
+                href="#home" 
+                onClick={(e) => { e.preventDefault(); smoothScrollTo('home'); }}
+                className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+              >
+                Home
+              </a>
+              <a 
+                href="#services" 
+                onClick={(e) => { e.preventDefault(); smoothScrollTo('services'); }}
+                className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+              >
+                Services
+              </a>
+              <a 
+                href="#about" 
+                onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}
+                className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+              >
+                About
+              </a>
+              <a 
+                href="#contact" 
+                onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}
+                className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+              >
+                Contact
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -84,10 +119,34 @@ export default function HatuaTechWebsite() {
           {isMenuOpen && (
             <div className="md:hidden mt-4 py-4 border-t border-gray-200 animate-fade-in">
               <div className="flex flex-col space-y-4">
-                <a href="#home" className="text-gray-700 hover:text-orange-500 transition-colors">Home</a>
-                <a href="#services" className="text-gray-700 hover:text-orange-500 transition-colors">Services</a>
-                <a href="#about" className="text-gray-700 hover:text-orange-500 transition-colors">About</a>
-                <a href="#contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
+                <a 
+                  href="#home" 
+                  onClick={(e) => { e.preventDefault(); smoothScrollTo('home'); setIsMenuOpen(false); }}
+                  className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+                >
+                  Home
+                </a>
+                <a 
+                  href="#services" 
+                  onClick={(e) => { e.preventDefault(); smoothScrollTo('services'); setIsMenuOpen(false); }}
+                  className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+                >
+                  Services
+                </a>
+                <a 
+                  href="#about" 
+                  onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setIsMenuOpen(false); }}
+                  className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+                >
+                  About
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setIsMenuOpen(false); }}
+                  className="text-gray-700 hover:text-orange-500 transition-colors cursor-pointer"
+                >
+                  Contact
+                </a>
               </div>
             </div>
           )}
@@ -96,48 +155,75 @@ export default function HatuaTechWebsite() {
 
       {/* Hero Section */}
       <section id="home" className="pt-20 min-h-screen flex items-center relative overflow-hidden bg-white">
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Developing Products for
-                <span className="text-orange-500 block">Modern Africa</span>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-fade-in-up max-w-2xl">
+              <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+                Building 
+                <span className="text-orange-500 block">Tomorrow's</span>
+                <span className="text-gray-900 block">Africa</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Powerful financial infrastructure built for African businesses. 
-                Scale your operations with our secure, reliable fintech solutions.
+              <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-xl">
+                Revolutionary fintech infrastructure designed for the next generation of African businesses. 
+                Simple. Secure. Scalable.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors flex items-center justify-center group">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <button 
+                  onClick={() => smoothScrollTo('contact')}
+                  className="bg-orange-500 text-white px-10 py-5 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 flex items-center justify-center group hover:shadow-lg hover:shadow-orange-500/25"
+                >
                   Get Started
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
-                  Schedule Demo
+                <button 
+                  onClick={() => smoothScrollTo('services')}
+                  className="border-2 border-gray-300 text-gray-700 px-10 py-5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 hover:border-gray-400"
+                >
+                  Explore Services
                 </button>
               </div>
             </div>
             
-            <div className="animate-fade-in-up animation-delay-500">
-              <div className="relative">
+            <div className="animate-fade-in-up animation-delay-500 relative">
+              <div className="relative max-w-lg mx-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                  alt="Modern fintech dashboard"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                  alt="African professional using mobile fintech application"
+                  className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-lg animate-bounce">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm font-semibold text-gray-800">Live</span>
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-orange-500">$2.5M+</div>
+                  <div className="text-sm text-gray-600">Processed Today</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, #f97316 0%, transparent 50%), radial-gradient(circle at 75% 75%, #f97316 0%, transparent 50%)`
+          }}></div>
+        </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Built for Scale</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+      <section id="services" className="py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20 animate-fade-in-up">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">Built for Scale</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Enterprise-grade fintech infrastructure designed for the unique needs of African businesses
             </p>
           </div>
@@ -146,14 +232,14 @@ export default function HatuaTechWebsite() {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow animate-fade-in-up group hover:-translate-y-1 transition-transform duration-300 border border-gray-100"
+                className="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 animate-fade-in-up group hover:-translate-y-2 border border-gray-100"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="text-orange-500 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-orange-500 mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -161,31 +247,34 @@ export default function HatuaTechWebsite() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
               <img 
                 src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-                alt="African business professionals"
-                className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                alt="African business professionals collaborating"
+                className="w-full h-96 object-cover rounded-3xl shadow-2xl"
               />
             </div>
             
             <div className="animate-fade-in-up animation-delay-500">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Empowering African Finance</h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">Empowering African Finance</h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 HatuaTech Innovations Limited is redefining financial services across Africa. 
                 We combine deep local market knowledge with cutting-edge technology to build 
                 solutions that actually work for African businesses.
               </p>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
                 Based in Lusaka, Zambia, we're committed to driving financial inclusion 
                 and economic growth through innovative fintech solutions that scale.
               </p>
-              <div className="flex items-center text-orange-500 font-semibold hover:text-orange-600 transition-colors cursor-pointer">
-                <span>Discover our story</span>
-                <ChevronRight className="ml-2 w-5 h-5" />
+              <div 
+                className="flex items-center text-orange-500 font-semibold hover:text-orange-600 transition-colors cursor-pointer group"
+                onClick={() => smoothScrollTo('contact')}
+              >
+                <span className="text-lg">Discover our story</span>
+                <ChevronRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           </div>
@@ -193,61 +282,61 @@ export default function HatuaTechWebsite() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+      <section className="py-32 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
             <div className="animate-fade-in-up">
-              <div className="text-4xl font-bold text-orange-400 mb-2">99.9%</div>
-              <div className="text-xl text-gray-300">Uptime</div>
+              <div className="text-6xl md:text-7xl font-bold text-orange-400 mb-4">99.9%</div>
+              <div className="text-2xl text-gray-300">Uptime</div>
             </div>
             <div className="animate-fade-in-up animation-delay-200">
-              <div className="text-4xl font-bold text-orange-400 mb-2">500+</div>
-              <div className="text-xl text-gray-300">Businesses Served</div>
+              <div className="text-6xl md:text-7xl font-bold text-orange-400 mb-4">500+</div>
+              <div className="text-2xl text-gray-300">Businesses Served</div>
             </div>
             <div className="animate-fade-in-up animation-delay-400">
-              <div className="text-4xl font-bold text-orange-400 mb-2">$50M+</div>
-              <div className="text-xl text-gray-300">Transactions Processed</div>
+              <div className="text-6xl md:text-7xl font-bold text-orange-400 mb-4">$50M+</div>
+              <div className="text-2xl text-gray-300">Transactions Processed</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600">
+      <section id="contact" className="py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20 animate-fade-in-up">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">Ready to Get Started?</h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
               Join hundreds of African businesses already using HatuaTech
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center animate-fade-in-up bg-white p-8 rounded-xl shadow-sm">
-              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-white" />
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="text-center animate-fade-in-up bg-white p-12 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Head Office</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Head Office</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
                 Kelvin Siwale Road Plot 2374<br />
                 Lusaka, Zambia
               </p>
             </div>
 
-            <div className="text-center animate-fade-in-up animation-delay-200 bg-white p-8 rounded-xl shadow-sm">
-              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-white" />
+            <div className="text-center animate-fade-in-up animation-delay-200 bg-white p-12 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Phone</h3>
-              <p className="text-gray-600">+260 769850331</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Phone</h3>
+              <p className="text-gray-600 text-lg">+260 769850331</p>
             </div>
 
-            <div className="text-center animate-fade-in-up animation-delay-400 bg-white p-8 rounded-xl shadow-sm">
-              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
+            <div className="text-center animate-fade-in-up animation-delay-400 bg-white p-12 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Mail className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Email</h3>
-              <p className="text-gray-600">hello@hatuatech.co.zm</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Email</h3>
+              <p className="text-gray-600 text-lg">hello@hatuatech.co.zm</p>
             </div>
           </div>
         </div>
@@ -269,6 +358,10 @@ export default function HatuaTechWebsite() {
       </footer>
 
       <style jsx>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        
         .animation-delay-200 {
           animation-delay: 200ms;
         }
@@ -312,6 +405,17 @@ export default function HatuaTechWebsite() {
             opacity: 1; 
             transform: translateY(0); 
           }
+        }
+        
+        /* Enhanced scroll behavior */
+        * {
+          scroll-behavior: smooth;
+        }
+        
+        /* Improved text rendering */
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       `}</style>
     </div>
