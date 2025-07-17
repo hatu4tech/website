@@ -158,7 +158,7 @@ export default function HatuaTechWebsite() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up max-w-2xl">
-              <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
                 Developing Products for 
                 <span className="text-orange-500 block">Modern Africa</span>
               </h1>
