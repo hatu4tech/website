@@ -159,13 +159,12 @@ export default function HatuaTechWebsite() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up max-w-2xl">
               <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
-                Building 
-                <span className="text-orange-500 block">Tomorrow's</span>
-                <span className="text-gray-900 block">Africa</span>
+                Developing Products for 
+                <span className="text-orange-500 block">Modern Africa</span>
               </h1>
               <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-xl">
-                Revolutionary fintech infrastructure designed for the next generation of African businesses. 
-                Simple. Secure. Scalable.
+                Powerful financial infrastructure built for African businesses. 
+                Scale your operations with our secure, reliable fintech solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <button 
