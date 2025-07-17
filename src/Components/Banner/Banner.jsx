@@ -185,14 +185,13 @@ export default function HatuaTechWebsite() {
             </div>
             
             <div className="animate-fade-in-up animation-delay-500 relative">
-              <div className="relative max-w-5xl mx-auto aspect-[3/1]">
+              <div className="relative max-w-lg mx-auto">
                 <img 
                   src="/banner-image.jpg"
                   alt="African professional using mobile fintech application"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                  style={{ imageRendering: 'auto' }}
+                  className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
                 
                 {/* Floating Elements */}
                 <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-lg animate-bounce">
