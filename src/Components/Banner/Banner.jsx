@@ -71,13 +71,17 @@ export default function HatuaTechWebsite() {
         <nav className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* logo */}
-            <div className="flex items-center space-x-3">
-              <img
-                src="/logo.png"
-                alt="HatuaTech Logo"
-                className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"
-              />
+           <div className="flex items-center space-x-4">
+            <img
+              src="/logo.png"
+              alt="HatuaTech Logo"
+              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20"
+            />
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              HatuaTech
             </div>
+          </div>
+
 
             
             {/* Desktop Navigation */}
