@@ -70,9 +70,15 @@ export default function HatuaTechWebsite() {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-40 shadow-sm animate-slide-down">
         <nav className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-gray-900">
-              HatuaTech
+            {/* logo */}
+            <div className="flex items-center space-x-3">
+              <img
+                src="/logo.png"
+                alt="HatuaTech Logo"
+                className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"
+              />
             </div>
+
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
