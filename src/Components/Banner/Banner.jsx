@@ -327,7 +327,7 @@ export default function HatuaTechWebsite() {
                 <Phone className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">Phone</h3>
-              <p className="text-gray-600 text-lg">+260 769850331</p>
+              <p className="text-gray-600 text-lg">+260 0762628006</p>
             </div>
 
             <div className="text-center animate-fade-in-up animation-delay-400 bg-white p-12 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300">
