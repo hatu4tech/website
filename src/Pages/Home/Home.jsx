@@ -5,6 +5,7 @@ import About from "../../Components/About/About.jsx";
 import ContactPage from "../../Components/Contact/contact.jsx";
 import Footer from "../../Components/footer/footer.jsx";
 
+
 const Home = () => {
     return (
         <div>
@@ -19,6 +20,7 @@ const Home = () => {
                 <Banner></Banner>
             </div>
 
+            {/* banner component  */}
             <div className="w-full">
                 <Solutions></Solutions>
             </div>
