@@ -1,9 +1,9 @@
 import Banner from "../../Components/Banner/Banner";
 import Navigation from "../../Components/navigation/navigation.jsx";
 import Solutions from "../../Components/app_solutions/solutions.jsx";
-import About from "../../Components/About/About.jsx";
-import ContactPage from "../../Components/Contact/contact.jsx";
-import Footer from "../../Components/footer/footer.jsx";
+import About from "../../Components/AboutPage/aboutpage.jsx";
+import ContactPage from "../../Components/ContactPage/contact.jsx";
+import Footer from "../../Components/FooterSection/footer.jsx";
 
 
 const Home = () => {
