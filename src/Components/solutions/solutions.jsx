@@ -1,5 +1,3 @@
-// Solutions Page Component
-
 import { DollarSign, Zap, TrendingUp, Globe, CheckCircle } from 'lucide-react';
 
 const SolutionsPage = () => {
