@@ -77,10 +77,6 @@ export default function HatuaTechWebsite() {
                 alt="HatuaTech Logo"
                 className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
               />
-
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                HatuaTech
-              </div>
             </div>
 
 
