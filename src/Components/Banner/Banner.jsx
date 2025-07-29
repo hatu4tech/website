@@ -72,15 +72,16 @@ export default function HatuaTechWebsite() {
           <div className="flex justify-between items-center">
             {/* logo */}
            <div className="flex items-center space-x-4">
-            <img
-              src="/logo.png"
-              alt="HatuaTech Logo"
-              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20"
-            />
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-              HatuaTech
+              <img
+                src="/logo.png"
+                alt="HatuaTech Logo"
+                className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
+              />
+
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                HatuaTech
+              </div>
             </div>
-          </div>
 
 
             
