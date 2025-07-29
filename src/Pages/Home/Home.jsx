@@ -1,6 +1,6 @@
 import Banner from "../../Components/Banner/Banner";
 import Navigation from "../../Components/navigation/navigation.jsx";
-import Solutions from "../../Components/Solutions/Solutions.jsx";
+import Solutions from "../../Components/app_solutions/solutions.jsx";
 import About from "../../Components/About/About.jsx";
 import ContactPage from "../../Components/Contact/contact.jsx";
 import Footer from "../../Components/footer/footer.jsx";
