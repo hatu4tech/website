@@ -1,4 +1,3 @@
-// Navigation.jsx
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -15,24 +14,30 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Link to="/">
-            <img src="logo.png" alt="HatuaTech Logo" className="h-10 w-auto" />
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-200/50 shadow-sm">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex justify-between items-center">
+        {/* Logo with Accent Background */}
+        <div className="flex items-center">
+          <Link to="/" className="flex items-center">
+            <div className="bg-amber-300 p-2 lg:p-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <img 
+                src="logo.png" 
+                alt="HatuaTech Logo" 
+                className="h-6 lg:h-9 w-auto" 
+              />
+            </div>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navItems.map(item => (
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-all duration-200 hover:scale-105 ${
                 location.pathname === item.path
-                  ? 'text-slate-900'
+                  ? 'text-slate-900 font-semibold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -41,50 +46,61 @@ const Navigation = () => {
           ))}
           <Link
             to="/contact"
-            className="bg-gradient-to-r from-slate-800 to-slate-900 text-white text-sm px-5 py-2.5 rounded-xl shadow-md hover:from-slate-700 hover:to-slate-800 transition-all"
+            className="bg-amber-400 hover:bg-amber-300 text-slate-900 text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             Get Started
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-slate-700"
-        >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Navigation - Simplified */}
+        <div className="flex lg:hidden items-center gap-3">
+          {/* Mobile CTA Button */}
+          
+          
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 bg-amber-400 hover:bg-amber-300 text-slate-900 rounded-lg transition-colors"
+          >
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200 shadow-inner">
-          <div className="px-6 py-4 space-y-3">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/50 shadow-lg">
+          <div className="px-4 py-4 space-y-1">
             {navItems.map(item => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block w-full text-left text-sm font-medium py-2 rounded-md transition-colors ${
+                className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                   location.pathname === item.path
-                    ? 'text-slate-900'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'text-slate-900 bg-amber-50 font-semibold border-l-4 border-amber-400'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Link
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block w-full bg-gradient-to-r from-slate-800 to-slate-900 text-white text-sm px-4 py-2.5 rounded-xl shadow hover:from-slate-700 hover:to-slate-800 transition-all text-center"
-            >
-              Get Started
-            </Link>
+            
+            {/* Mobile Menu Footer */}
+            <div className="pt-4 mt-4 border-t border-slate-200">
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-center w-full bg-slate-900 hover:bg-slate-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md transition-all duration-300"
+              >
+                Get Started Today
+              </Link>
+            </div>
           </div>
         </div>
       )}
     </header>
   );
 };
+
 export default Navigation;
