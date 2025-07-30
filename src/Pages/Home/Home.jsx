@@ -1,27 +1,32 @@
-import Banner from "../../Components/Banner/Banner";
+import Banner from "../../Components/homeComponents/Banner/Banner.jsx";
 import Navigation from "../../Components/navigation/navigation.jsx";
-import Solutions from "../../Components/app_solutions/solutions.jsx";
-import About from "../../Components/AboutPage/aboutpage.jsx";
-import ContactPage from "../../Components/ContactPage/contact.jsx";
-import Footer from "../../Components/FooterSection/footer.jsx";
-
+import Solutions from "../../Components/homeComponents/app_solutions/solutions.jsx";
+import About from "../../Components/homeComponents/AboutPage/aboutpage.jsx";
+import Footer from "../../Components/homeComponents/FooterSection/footer.jsx";
+import Features from "../../Components/homeComponents/features/features.jsx";
+import HatuaTechHomepage from "../../Components/demo/demo.jsx"; // Importing the demo component
 
 const Home = () => {
     return (
         <div>
 
-            {/* navigation component  */}
+            {/* <div className="w-full">
+                <HatuaTechHomepage></HatuaTechHomepage>
+            </div> */}
+
             <div className="w-full">
                 <Navigation></Navigation>
             </div>
 
-            {/* banner component  */}
-            <div className="w-full">
+             <div className="w-full">
                 <Banner></Banner>
             </div>
 
-            {/* banner component  */}
-            <div className="w-full">
+             <div className="w-full">
+                <Features></Features>
+            </div>
+
+             <div className="w-full">
                 <Solutions></Solutions>
             </div>
 
@@ -29,12 +34,7 @@ const Home = () => {
                 <About></About>
             </div>
 
-            <div className="w-full">
-                <ContactPage></ContactPage>
-            </div>
-
-
-            <div className="w-full">
+             <div className="w-full">
                 <Footer></Footer>
             </div>
 
