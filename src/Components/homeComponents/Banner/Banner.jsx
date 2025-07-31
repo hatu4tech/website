@@ -123,7 +123,7 @@ const Banner = ({ setCurrentPage }) => {
                 <span className="hidden sm:inline">Daily </span>Transactions
               </div>
               <div className="text-slate-400 text-xs lg:text-sm text-center lg:text-left">
-                <span className="text-slate-200 font-semibold text-base lg:text-lg">15+</span>
+                <span className="text-slate-200 font-semibold text-base lg:text-lg">12</span>
                 <br />Countries
               </div>
               <div className="text-slate-400 text-xs lg:text-sm text-center lg:text-left">

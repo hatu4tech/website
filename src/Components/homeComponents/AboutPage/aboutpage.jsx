@@ -51,7 +51,7 @@ const AboutPage = ({ setCurrentPage }) => {
             <div className="space-y-4 mb-8">
               {[
                 "21+ years of experience in African markets",
-                "Serving 8 countries across the continent", 
+                "Serving 12 countries across the continent", 
                 "24/7 local support and representation",
                 "Regulated and compliant service provider"
               ].map((item, i) => (
