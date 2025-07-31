@@ -49,7 +49,7 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Sarah Mwanza",
+      name: "Stanley Maina",
       role: "Chief Executive Officer",
       description: "10+ years in fintech leadership across Africa",
       delay: "delay-100"
@@ -83,7 +83,7 @@ const AboutPage = () => {
             {/* Badge */}
             <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
               <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
-              About Hatua Tech
+              About HatuaTech Innovations Limited
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
