@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
   Users,
   Target,
@@ -10,26 +11,32 @@ import {
 } from 'lucide-react';
 
 const AboutPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const values = [
     {
-      icon: <Lightbulb className="w-8 h-8" />,
+      icon: <Lightbulb className="w-6 h-6" />,
       title: "Innovation",
-      description: "We continuously push boundaries to create cutting-edge fintech solutions that address real African market needs."
+      description: "We continuously push boundaries to create cutting-edge fintech solutions that address real African market needs.",
+      delay: "delay-100"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
+      icon: <Shield className="w-6 h-6" />,
       title: "Security",
-      description: "Trust is paramount. We implement bank-grade security measures to protect every transaction and user interaction."
+      description: "Trust is paramount. We implement bank-grade security measures to protect every transaction and user interaction.",
+      delay: "delay-200"
     },
     {
-      icon: <Heart className="w-8 h-8" />,
+      icon: <Heart className="w-6 h-6" />,
       title: "Impact",
-      description: "Every solution we build is designed to create meaningful positive change in African communities and businesses."
+      description: "Every solution we build is designed to create meaningful positive change in African communities and businesses.",
+      delay: "delay-300"
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-6 h-6" />,
       title: "Partnership",
-      description: "We believe in collaborative growth, working closely with our clients to achieve shared success."
+      description: "We believe in collaborative growth, working closely with our clients to achieve shared success.",
+      delay: "delay-400"
     }
   ];
 
@@ -44,73 +51,102 @@ const AboutPage = () => {
     {
       name: "Sarah Mwanza",
       role: "Chief Executive Officer",
-      description: "10+ years in fintech leadership across Africa"
+      description: "10+ years in fintech leadership across Africa",
+      delay: "delay-100"
     },
     {
       name: "David Banda",
       role: "Chief Technology Officer",
-      description: "Expert in payment systems and blockchain technology"
+      description: "Expert in payment systems and blockchain technology",
+      delay: "delay-200"
     },
     {
       name: "Grace Tembo",
       role: "Head of Operations",
-      description: "Specialist in African market compliance and regulations"
+      description: "Specialist in African market compliance and regulations",
+      delay: "delay-300"
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 mb-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            About Hatua Tech
-          </h1>
-          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            We're building the financial infrastructure that powers African innovation. 
-            Our mission is to democratize access to financial services across the continent.
-          </p>
-        </div>
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-700 mb-2">
-                {stat.number}
-              </div>
-              <div className="text-slate-600 font-medium">{stat.label}</div>
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`text-center transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            {/* Badge */}
+            <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
+              <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+              About Hatua Tech
             </div>
-          ))}
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
+              Building Africa's
+              <span className="block text-amber-500 font-light italic mt-2">Financial Future</span>
+            </h1>
+
+            <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-4xl mx-auto font-light">
+              We're building the financial infrastructure that powers African innovation. Our mission is to democratize access to financial services across the continent.
+            </p>
+          </div>
+
+          {/* Stats Section */}
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 transition-all duration-1000 ease-out delay-200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-slate-600 font-medium text-sm uppercase tracking-wide">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Story Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Story</h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Founded in 2020 in Lusaka, Zambia, Hatua Tech emerged from a simple observation: 
-                African businesses needed financial technology that understood their unique challenges 
-                and opportunities.
-              </p>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Our founders, having worked across various African markets, recognized the gap between 
-                global fintech solutions and local needs. We set out to build technology that bridges 
-                this divide, creating tools that are both world-class and locally relevant.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Today, we're proud to serve hundreds of businesses across Africa, processing millions 
-                of transactions and contributing to the continent's digital transformation journey.
-              </p>
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className={`transition-all duration-1000 ease-out delay-400 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">Our Story</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                  Founded in 2020 in Lusaka, Zambia, Hatua Tech emerged from a simple observation: 
+                  African businesses needed financial technology that understood their unique challenges 
+                  and opportunities.
+                </p>
+                <p>
+                  Our founders, having worked across various African markets, recognized the gap between 
+                  global fintech solutions and local needs. We set out to build technology that bridges 
+                  this divide, creating tools that are both world-class and locally relevant.
+                </p>
+                <p>
+                  Today, we're proud to serve hundreds of businesses across Africa, processing millions 
+                  of transactions and contributing to the continent's digital transformation journey.
+                </p>
+              </div>
             </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
-                <Target className="w-12 h-12 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-blue-100 text-lg leading-relaxed">
+
+            <div className={`transition-all duration-1000 ease-out delay-600 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <div className="bg-white border border-slate-200 rounded-3xl p-8 lg:p-10 shadow-sm">
+                <div className="bg-slate-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-slate-700">
+                  <Target className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-slate-900">Our Mission</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
                   To empower African businesses with world-class financial technology that drives 
                   growth, inclusion, and prosperity across the continent.
                 </p>
@@ -118,76 +154,96 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Values Section */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Values</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+      <section className="py-20 lg:py-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`text-center mb-16 lg:mb-20 transition-all duration-1000 ease-out delay-800 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Our Values</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               These core principles guide everything we do and shape how we build relationships 
               with our clients and communities.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center group">
-                <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-700 group-hover:bg-blue-100 transition-colors">
+              <div
+                key={index}
+                className={`text-center group transition-all duration-1000 ease-out ${value.delay} ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <div className="bg-slate-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-slate-700 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all duration-300">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-4">{value.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{value.description}</p>
+                <p className="text-slate-600 leading-relaxed text-sm">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Team Section */}
-      <div className="bg-slate-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Leadership Team</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`text-center mb-16 lg:mb-20 transition-all duration-1000 ease-out delay-1200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Leadership Team</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Meet the experienced professionals driving Hatua Tech's vision forward.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <Users className="w-12 h-12 text-blue-600" />
+              <div
+                key={index}
+                className={`bg-white border border-slate-200 p-8 rounded-3xl shadow-sm text-center hover:shadow-md transition-all duration-700 ease-out ${member.delay} ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <div className="bg-slate-100 w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center text-slate-600">
+                  <Users className="w-10 h-10" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                <p className="text-slate-600">{member.description}</p>
+                <p className="text-amber-600 font-medium mb-4">{member.role}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{member.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Vision Section */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-12 text-center text-white">
-            <Globe className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-8">
-              To become Africa's leading fintech infrastructure provider, enabling seamless 
-              financial services that connect businesses, communities, and opportunities 
-              across the continent and beyond.
-            </p>
-            <div className="flex items-center justify-center space-x-2">
-              <TrendingUp className="w-6 h-6" />
-              <span className="text-lg font-medium">Building the future of African finance</span>
+      <section className="py-20 lg:py-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`transition-all duration-1000 ease-out delay-1600 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <div className="bg-slate-900 rounded-3xl p-12 lg:p-16 text-center text-white">
+              <div className="bg-amber-400 w-20 h-20 rounded-2xl mx-auto mb-8 flex items-center justify-center text-slate-900">
+                <Globe className="w-10 h-10" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">Our Vision</h2>
+              <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                To become Africa's leading fintech infrastructure provider, enabling seamless 
+                financial services that connect businesses, communities, and opportunities 
+                across the continent and beyond.
+              </p>
+              <div className="flex items-center justify-center space-x-3 text-amber-400">
+                <TrendingUp className="w-6 h-6" />
+                <span className="text-lg font-medium">Building the future of African finance</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

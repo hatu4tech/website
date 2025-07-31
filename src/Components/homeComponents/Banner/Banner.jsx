@@ -37,19 +37,19 @@ const Banner = ({ setCurrentPage }) => {
 
  const images = [
      {
-      url: "./banner/img-4.jpg",
+      url: "/banner/img-4.jpg",
       alt: "African professionals using fintech solutions"
     },
     {
-      url: "./banner/img-7.jpg",
+      url: "/banner/img-7.jpg",
       alt: "Modern banking technology"
     },
     {
-      url: "./banner/img-9.jpg",
+      url: "/banner/img-9.jpg",
       alt: "Financial dashboard analytics"
     },
     {
-      url: "./banner/img-3.jpg",
+      url: "/banner/img-3.jpg",
       alt: "Professional business meeting"
     }
   ];

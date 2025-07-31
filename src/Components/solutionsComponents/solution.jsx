@@ -1,216 +1,262 @@
+import React, { useState, useEffect } from 'react';
 import {
-  Shield,
-  Zap,
-  CreditCard,
-  Smartphone,
   ArrowRight,
   CheckCircle,
-  Users,
+  Play,
+  DollarSign,
+  Zap,
+  TrendingUp,
   Globe,
-  Lock,
-  TrendingUp
+  Shield,
+  Users,
+  Award,
+  Clock,
+  Star
 } from 'lucide-react';
 
-const SolutionsPage = () => {
+const SolutionsPage = ({ setCurrentPage }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   const solutions = [
     {
-      title: "E-KYC Verification Solution",
-      description: "Advanced identity verification system designed for African markets with support for local ID formats and biometric authentication.",
-      features: ["Biometric Authentication", "Document Verification", "Real-time Processing", "Compliance Ready"],
-      icon: <Shield className="w-8 h-8" />,
-      gradient: "from-emerald-500 to-teal-600",
-      bgGradient: "from-emerald-50 to-teal-50",
-      iconBg: "bg-emerald-100",
-      iconColor: "text-emerald-700"
+      title: "E-KYC Verification",
+      description: "Streamlined customer verification with AI-powered document processing and biometric authentication for African markets.",
+      icon: <Shield className="w-6 h-6" />,
+      features: ["AI Document Analysis", "Biometric Verification", "Real-time Processing", "Regulatory Compliance"],
+      stats: { metric: "98.7%", label: "Accuracy Rate" },
+      delay: "delay-100"
     },
     {
-      title: "Cross Border Payment Gateways",
-      description: "Secure and fast payment solutions connecting African businesses to global markets with competitive exchange rates.",
-      features: ["Multi-Currency Support", "Real-time Settlement", "Low Transaction Fees", "API Integration"],
-      icon: <Globe className="w-8 h-8" />,
-      gradient: "from-blue-500 to-indigo-600",
-      bgGradient: "from-blue-50 to-indigo-50",
-      iconBg: "bg-blue-100",
-      iconColor: "text-blue-700"
+      title: "Cross-Border Payments",
+      description: "Seamless international transactions with competitive exchange rates and instant settlement across 15+ African countries.",
+      icon: <Globe className="w-6 h-6" />,
+      features: ["Multi-Currency Support", "Real-time Exchange", "Instant Settlement", "Low Transaction Fees"],
+      stats: { metric: "15+", label: "Countries" },
+      delay: "delay-200"
     },
     {
-      title: "Card Enterprise Solutions",
-      description: "Comprehensive card management platform with advanced analytics, fraud detection, and enterprise-grade security features.",
-      features: ["Card Issuance", "Fraud Detection", "Real-time Analytics", "Custom Dashboards"],
-      icon: <CreditCard className="w-8 h-8" />,
-      gradient: "from-purple-500 to-pink-600",
-      bgGradient: "from-purple-50 to-pink-50",
-      iconBg: "bg-purple-100",
-      iconColor: "text-purple-700"
+      title: "Card Enterprise",
+      description: "Complete card management and processing solutions with advanced analytics and fraud detection capabilities.",
+      icon: <DollarSign className="w-6 h-6" />,
+      features: ["Virtual & Physical Cards", "Spending Controls", "Real-time Analytics", "API Integration"],
+      stats: { metric: "500K+", label: "Cards Issued" },
+      delay: "delay-300"
     },
     {
       title: "Bulk Airtime Purchase",
-      description: "Streamlined bulk airtime distribution system with automated reconciliation and multi-operator support across Africa.",
-      features: ["Multi-Operator Support", "Automated Distribution", "Real-time Reconciliation", "Volume Discounts"],
-      icon: <Smartphone className="w-8 h-8" />,
-      gradient: "from-orange-500 to-red-600",
-      bgGradient: "from-orange-50 to-red-50",
-      iconBg: "bg-orange-100",
-      iconColor: "text-orange-700"
+      description: "Automated airtime distribution with real-time inventory management and multi-operator support.",
+      icon: <Zap className="w-6 h-6" />,
+      features: ["Multi-Network Support", "Bulk Processing", "Inventory Management", "API Integration"],
+      stats: { metric: "99.9%", label: "Success Rate" },
+      delay: "delay-400"
     }
   ];
 
   const benefits = [
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Lightning Fast",
-      description: "Process transactions in milliseconds with 99.9% uptime"
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: "Advanced Analytics",
+      description: "Real-time insights and comprehensive reporting dashboards"
     },
     {
-      icon: <Lock className="w-6 h-6" />,
-      title: "Bank-Grade Security",
-      description: "End-to-end encryption with PCI DSS compliance"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5" />,
       title: "24/7 Support",
       description: "Dedicated African support team in your timezone"
     },
     {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Scalable Growth",
-      description: "Infrastructure that grows with your business needs"
+      icon: <Award className="w-5 h-5" />,
+      title: "Enterprise Grade",
+      description: "Bank-level security with 99.9% uptime guarantee"
+    },
+    {
+      icon: <Clock className="w-5 h-5" />,
+      title: "Rapid Integration",
+      description: "Deploy in days with our developer-friendly APIs"
     }
   ];
 
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white pt-32">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6">
-              Our Solutions
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`text-center transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            {/* Badge */}
+            <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
+              <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+              Complete Fintech Solutions
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
+              Built for
+              <span className="block text-amber-500 font-light italic mt-2">Africa's Future</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive fintech infrastructure designed to power African businesses with 
-              world-class technology and local market expertise.
+
+            <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
+              Comprehensive fintech infrastructure designed to power African businesses with cutting-edge technology and local expertise.
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white/70 backdrop-blur-sm p-6 rounded-xl border border-white/50 text-center hover:bg-white/90 transition-all duration-300">
-                <div className="bg-gradient-to-br from-blue-100 to-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-600">
-                  {benefit.icon}
+      {/* Solutions Grid */}
+      <section className="pb-20 lg:pb-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            {solutions.map((solution, index) => (
+              <div
+                key={index}
+                className={`group relative transition-all duration-700 ease-out ${solution.delay} ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="bg-white border border-slate-200 rounded-3xl p-8 lg:p-10 hover:border-slate-300 hover:shadow-lg transition-all duration-500 h-full">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center">
+                      <div className="bg-slate-100 w-12 h-12 rounded-2xl flex items-center justify-center mr-4 text-slate-700 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all duration-300">
+                        {solution.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-1">
+                          {solution.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-amber-500">{solution.stats.metric}</div>
+                      <div className="text-xs text-slate-500 uppercase tracking-wide">{solution.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-slate-600 mb-8 leading-relaxed">
+                    {solution.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {solution.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-amber-500 mr-3 flex-shrink-0" />
+                        <span className="text-slate-700 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <button className="text-slate-900 font-medium hover:text-amber-600 transition-colors flex items-center group/btn">
+                    Learn More 
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
                 </div>
-                <h3 className="font-semibold text-slate-900 mb-2">{benefit.title}</h3>
-                <p className="text-sm text-slate-600">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Solutions Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-8">
-          {solutions.map((solution, index) => (
-            <div key={index} className="group relative overflow-hidden">
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${solution.bgGradient} opacity-50 group-hover:opacity-70 transition-opacity duration-300`}></div>
-              
-              {/* Card Content */}
-              <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {/* Icon with Gradient Background */}
-                <div className="relative mb-6">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${solution.gradient} rounded-lg blur-lg opacity-30`}></div>
-                  <div className={`relative ${solution.iconBg} w-16 h-16 rounded-lg flex items-center justify-center ${solution.iconColor}`}>
-                    {solution.icon}
-                  </div>
+      {/* Benefits Section */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className={`text-center mb-16 lg:mb-20 transition-all duration-1000 ease-out delay-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              Why Choose Our Platform
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Built with African businesses in mind, our platform delivers world-class technology with local expertise.
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className={`text-center group transition-all duration-700 ease-out delay-${600 + index * 100} ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 text-slate-600 group-hover:bg-amber-100 group-hover:text-amber-600 transition-all duration-300 shadow-sm border border-slate-200">
+                  {benefit.icon}
                 </div>
-
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-                  {solution.title}
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                  {benefit.title}
                 </h3>
-                
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  {solution.description}
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {benefit.description}
                 </p>
-
-                {/* Features List */}
-                <ul className="space-y-3 mb-8">
-                  {solution.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center group-hover:transform group-hover:translate-x-1 transition-transform duration-300">
-                      <div className={`bg-gradient-to-r ${solution.gradient} p-1 rounded-full mr-3`}>
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-slate-700 font-medium">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button className={`group/btn w-full bg-gradient-to-r ${solution.gradient} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}>
-                  <span>Learn More</span>
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </button>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Integration Section */}
-      <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Seamless Integration
-          </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our solutions integrate effortlessly with your existing systems. Get started in minutes, 
-            not months, with our comprehensive APIs and developer-friendly documentation.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="text-3xl font-bold text-blue-300 mb-2">5 min</div>
-              <div className="text-white">Integration Setup</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="text-3xl font-bold text-green-300 mb-2">RESTful</div>
-              <div className="text-white">API Architecture</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="text-3xl font-bold text-purple-300 mb-2">24/7</div>
-              <div className="text-white">Developer Support</div>
-            </div>
-          </div>
-          
-          <button className="mt-12 bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center space-x-2">
-            <span>Start Building Today</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-            Join hundreds of African businesses already using Hatua Tech solutions to drive growth and innovation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2">
-              <span>Get Started Free</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:bg-slate-50 transition-colors">
-              Schedule Demo
-            </button>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <div className={`text-center transition-all duration-1000 ease-out delay-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-lg text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Join thousands of African businesses already using our platform to scale their operations and drive growth.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+              <button
+                onClick={() => setCurrentPage && setCurrentPage('contact')}
+                className="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-4 rounded-2xl font-semibold shadow-sm flex items-center justify-center group transition-all duration-300 hover:shadow-md hover:scale-[1.02] w-full sm:w-auto"
+              >
+                Get Started Today
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button
+                onClick={() => setCurrentPage && setCurrentPage('demo')}
+                className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-2xl font-medium hover:bg-slate-50 hover:border-slate-400 flex items-center justify-center group transition-all duration-300 w-full sm:w-auto"
+              >
+                <Play className="mr-3 w-5 h-5 group-hover:scale-110 transition-transform" />
+                Request Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="pb-20 lg:pb-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <div className={`flex items-center justify-center space-x-12 lg:space-x-16 transition-all duration-1000 ease-out delay-1200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">500K+</div>
+              <div className="text-slate-500 text-sm uppercase tracking-wide">Daily Transactions</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">15+</div>
+              <div className="text-slate-500 text-sm uppercase tracking-wide">Countries</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">99.9%</div>
+              <div className="text-slate-500 text-sm uppercase tracking-wide">Uptime</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
