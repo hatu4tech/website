@@ -61,38 +61,49 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section
-        className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/banner/img-5.jpg')", // Replace with your actual image path
-        }}
+      {/* Hero Section - Enhanced Version */}
+<section
+  className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat overflow-hidden"
+  style={{
+    backgroundImage: "url('/banner/img-5.jpg')", // Replace with your actual image path
+  }}
+>
+  {/* Dark overlay for better text visibility */}
+  <div className="absolute inset-0 bg-black/40"></div>
+  
+  {/* Gradient overlay for additional depth */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+  
+  {/* Content container with enhanced backdrop */}
+  <div className="relative z-10 bg-white/80 dark:bg-black/60 backdrop-blur-md border-y border-white/20">
+    <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+      <div
+        className={`text-center transition-all duration-1000 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       >
-        <div className="bg-white/70 dark:bg-black/50 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto px-6 lg:px-12">
-            <div
-              className={`text-center transition-all duration-1000 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              {/* Badge */}
-              <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
-                <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
-                Get In Touch
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
-                Let's Build
-                <span className="block text-amber-500 font-light italic mt-2">Something Great</span>
-              </h1>
-
-              <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
-                Ready to transform your business with cutting-edge fintech solutions? Our team is here to help you get started on your journey.
-              </p>
-            </div>
-          </div>
+        {/* Badge with enhanced visibility */}
+        <div className="inline-flex items-center bg-white/90 border border-white/30 shadow-lg px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-700 backdrop-blur-sm">
+          <div className="w-2 h-2 bg-amber-400 rounded-full mr-3 shadow-sm"></div>
+          Get In Touch
         </div>
-      </section>
+
+        {/* Main heading with text shadow and enhanced contrast */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900 drop-shadow-sm">
+          Let's Build
+          <span className="block text-amber-500 font-light italic mt-2 drop-shadow-sm">
+            Something Great
+          </span>
+        </h1>
+
+        {/* Description with enhanced readability */}
+        <p className="text-lg lg:text-xl text-slate-700 mb-16 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-sm">
+          Ready to transform your business with cutting-edge fintech solutions? Our team is here to help you get started on your journey.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       {/* Contact Information */}
