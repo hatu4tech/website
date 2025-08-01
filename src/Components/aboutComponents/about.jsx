@@ -87,26 +87,31 @@ const AboutPage = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section 
-      className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: "url('/banner/img-8.jpg')" }}
+        className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: "url('/banner/img-8.jpg')" }}
       >
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 z-0" /> 
+
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
           <div className={`text-center transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          } text-white`}>
+
             {/* Badge */}
-            <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
+            <div className="inline-flex items-center bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium mb-8 text-white">
               <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
               About HatuaTech Innovations Limited
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-white">
               Building Africa's
-              <span className="block text-amber-500 font-light italic mt-2">Financial Future</span>
+              <span className="block text-amber-400 font-light italic mt-2">Financial Future</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-4xl mx-auto font-light">
+            {/* Description */}
+            <p className="text-lg lg:text-xl text-white/90 mb-16 leading-relaxed max-w-4xl mx-auto font-light">
               We're building the financial infrastructure that powers African innovation. Our mission is to democratize access to financial services across the continent.
             </p>
           </div>
@@ -117,15 +122,16 @@ const AboutPage = () => {
           }`}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">
+                <div className="text-3xl lg:text-4xl font-bold text-amber-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-slate-600 font-medium text-sm uppercase tracking-wide">{stat.label}</div>
+                <div className="text-white/90 font-medium text-sm uppercase tracking-wide">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Story Section */}
       <section className="py-20 lg:py-32 bg-slate-50">
