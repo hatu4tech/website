@@ -83,28 +83,37 @@ const SolutionsPage = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className={`text-center transition-all duration-1000 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+      <section
+        className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center relative"
+        style={{ backgroundImage: `url('/banner/img-2.jpg')` }}
+      >
+        {/* Optional overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
+          <div
+            className={`text-center transition-all duration-1000 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            } text-white`}
+          >
             {/* Badge */}
-            <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
+            <div className="inline-flex items-center bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium mb-8 text-white">
               <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
               Complete Fintech Solutions
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-white">
               Built for
-              <span className="block text-amber-500 font-light italic mt-2">Africa's Future</span>
+              <span className="block text-amber-400 font-light italic mt-2">Africa's Future</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
+            <p className="text-lg lg:text-xl text-white/90 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
               Comprehensive fintech infrastructure designed to power African businesses with cutting-edge technology and local expertise.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* Solutions Grid */}
       <section className="pb-20 lg:pb-32">

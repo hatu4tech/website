@@ -62,28 +62,38 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className={`text-center transition-all duration-1000 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            {/* Badge */}
-            <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
-              <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
-              Get In Touch
+      <section
+        className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/banner/img-5.jpg')", // Replace with your actual image path
+        }}
+      >
+        <div className="bg-white/70 dark:bg-black/50 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto px-6 lg:px-12">
+            <div
+              className={`text-center transition-all duration-1000 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-8 text-slate-600">
+                <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                Get In Touch
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
+                Let's Build
+                <span className="block text-amber-500 font-light italic mt-2">Something Great</span>
+              </h1>
+
+              <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
+                Ready to transform your business with cutting-edge fintech solutions? Our team is here to help you get started on your journey.
+              </p>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-slate-900">
-              Let's Build
-              <span className="block text-amber-500 font-light italic mt-2">Something Great</span>
-            </h1>
-
-            <p className="text-lg lg:text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl mx-auto font-light">
-              Ready to transform your business with cutting-edge fintech solutions? Our team is here to help you get started on your journey.
-            </p>
           </div>
         </div>
       </section>
+
 
       {/* Contact Information */}
       <section className="pb-20 lg:pb-32">

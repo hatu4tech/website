@@ -86,8 +86,12 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+      <section 
+      className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat relative"
+      style={{ backgroundImage: "url('/banner/img-8.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/40 z-0" /> 
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
           <div className={`text-center transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
