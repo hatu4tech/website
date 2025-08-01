@@ -52,20 +52,31 @@ const AboutPage = () => {
       name: "Stanley Maina",
       role: "Chief Executive Officer",
       description: "10+ years in fintech leadership across Africa",
-      delay: "delay-100"
+      delay: "delay-100",
+      type: "leadership"
     },
     {
-      name: "David Banda",
-      role: "Chief Technology Officer",
-      description: "Expert in payment systems and blockchain technology",
-      delay: "delay-200"
+      name: "Inonge Imasiku", 
+      role: " Director, Partnerships and Strategy",
+      description: "Expert in partnership development and strategic planning with deep knowledge of African fintech ecosystems",
+      delay: "delay-200",
+      type: "leadership"
     },
     {
-      name: "Grace Tembo",
-      role: "Head of Operations",
-      description: "Specialist in African market compliance and regulations",
-      delay: "delay-300"
-    }
+      name: "Chifunilo Phiri",
+      role: "Full-Stack Developer",
+      description: "Frontend-focused full-stack developer specializing in React and modern UI/UX, with infrastructure management expertise",
+      delay: "delay-300",
+      type: "developer"
+    },
+    {
+      name: "Maxwell Nyimbili", 
+      role: "Full-Stack Developer",
+      description: "Backend-focused full-stack developer expert in Node.js and Go, with cloud infrastructure and system architecture experience",
+      delay: "delay-400",
+      type: "developer"
+    },
+    
   ];
 
   useEffect(() => {
@@ -194,26 +205,42 @@ const AboutPage = () => {
           <div className={`text-center mb-16 lg:mb-20 transition-all duration-1000 ease-out delay-1200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Leadership Team</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Our Team</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Meet the experienced professionals driving Hatua Tech's vision forward.
+              Meet the talented professionals driving Hatua Tech's vision forward.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <div
                 key={index}
-                className={`bg-white border border-slate-200 p-8 rounded-3xl shadow-sm text-center hover:shadow-md transition-all duration-700 ease-out ${member.delay} ${
+                className={`${
+                  member.type === 'leadership' 
+                    ? 'bg-white border-2 border-amber-200 p-8 rounded-3xl shadow-lg hover:shadow-xl lg:transform lg:scale-105' 
+                    : 'bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md'
+                } text-center transition-all duration-700 ease-out ${member.delay} ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <div className="bg-slate-100 w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center text-slate-600">
-                  <Users className="w-10 h-10" />
+                <div className={`${
+                  member.type === 'leadership'
+                    ? 'bg-gradient-to-br from-amber-100 to-amber-200 w-24 h-24 rounded-full border-4 border-amber-300'
+                    : 'bg-gradient-to-br from-slate-100 to-slate-200 w-16 h-16 rounded-full border-2 border-slate-300'
+                } mx-auto mb-6 flex items-center justify-center ${
+                  member.type === 'leadership' ? 'text-amber-700' : 'text-slate-600'
+                }`}>
+                  <Users className={member.type === 'leadership' ? 'w-10 h-10' : 'w-8 h-8'} />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
-                <p className="text-amber-600 font-medium mb-4">{member.role}</p>
-                <p className="text-slate-600 text-sm leading-relaxed">{member.description}</p>
+                <h3 className={`${
+                  member.type === 'leadership' ? 'text-xl' : 'text-lg'
+                } font-semibold text-slate-900 mb-2`}>{member.name}</h3>
+                <p className={`${
+                  member.type === 'leadership' ? 'text-amber-600 font-semibold' : 'text-slate-500 font-medium'
+                } mb-4 ${member.type === 'leadership' ? 'text-base' : 'text-sm'}`}>{member.role}</p>
+                <p className={`text-slate-600 leading-relaxed ${
+                  member.type === 'leadership' ? 'text-sm' : 'text-xs'
+                }`}>{member.description}</p>
               </div>
             ))}
           </div>
