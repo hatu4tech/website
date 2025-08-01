@@ -65,7 +65,7 @@ const AboutPage = () => {
     {
       name: "Chifunilo Phiri",
       role: "Full-Stack Developer",
-      description: "Frontend-focused full-stack developer specializing in React and modern UI/UX, with infrastructure management expertise",
+      description: "Frontend-focused full-stack developer specializing in Flutter and modern UI/UX, with infrastructure management expertise",
       delay: "delay-300",
       type: "developer"
     },
