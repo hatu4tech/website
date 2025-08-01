@@ -87,8 +87,8 @@ const SolutionsPage = ({ setCurrentPage }) => {
         className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center relative"
         style={{ backgroundImage: `url('/banner/img-2.jpg')` }}
       >
-        {/* Optional overlay for readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Dimmed overlay for readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
           <div
@@ -114,6 +114,8 @@ const SolutionsPage = ({ setCurrentPage }) => {
         </div>
       </section>
 
+      {/* Added spacing between hero and solutions */}
+      <div className="py-16 lg:py-20"></div>
 
       {/* Solutions Grid */}
       <section className="pb-20 lg:pb-32">

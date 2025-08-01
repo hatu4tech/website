@@ -57,7 +57,7 @@ const AboutPage = () => {
     },
     {
       name: "Inonge Imasiku", 
-      role: " Director, Partnerships and Strategy",
+      role: " Director, Partnerships and Strategy",
       description: "Expert in partnership development and strategic planning with deep knowledge of African fintech ecosystems",
       delay: "delay-200",
       type: "leadership"
@@ -90,8 +90,8 @@ const AboutPage = () => {
         className="pt-24 pb-20 lg:pt-32 lg:pb-32 bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: "url('/banner/img-8.jpg')" }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-0" /> 
+        {/* Dimmed overlay for readability */}
+        <div className="absolute inset-0 bg-black/60 z-0" /> 
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
           <div className={`text-center transition-all duration-1000 ease-out ${
@@ -132,6 +132,8 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Added spacing between hero and story section */}
+      <div className="py-16 lg:py-20"></div>
 
       {/* Story Section */}
       <section className="py-20 lg:py-32 bg-slate-50">
