@@ -43,7 +43,7 @@ const AboutPage = () => {
   const stats = [
     { number: "500+", label: "Businesses Served" },
     { number: "1M+", label: "Transactions Processed" },
-    { number: "15+", label: "Countries Reached" },
+    { number: "12", label: "Countries Reached" },
     { number: "99.9%", label: "Uptime Guarantee" }
   ];
 
