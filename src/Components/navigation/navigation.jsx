@@ -10,7 +10,6 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'Solutions', path: '/solutions' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   return (
