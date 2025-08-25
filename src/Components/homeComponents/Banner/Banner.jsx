@@ -197,7 +197,7 @@ const Banner = ({ setCurrentPage = () => {} }) => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               <span className="block md:hidden">Secure digital payments for African businesses</span>
-              <span className="hidden md:block">Empowering African businesses with secure, scalable digital payment solutions.</span>
+              <span className="hidden md:block">Empowering African businesses with secure, scalable digital solutions.</span>
             </p>
 
             {/* Enhanced CTA Section */}
