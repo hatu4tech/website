@@ -16,17 +16,18 @@ const Navigation = () => {
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-200/50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex justify-between items-center">
         {/* Logo with Accent Background */}
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <div className="bg-amber-300 p-2 lg:p-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <img 
-                src="logo.png" 
-                alt="HatuaTech Logo" 
-                className="h-6 lg:h-9 w-auto" 
-              />
-            </div>
-          </Link>
-        </div>
+       <div className="flex items-center">
+        <Link to="/" className="flex items-center">
+          <div className="p-2 lg:p-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <img 
+              src="logo.jpg" 
+              alt="HatuaTech Logo" 
+              className="h-6 lg:h-9 w-auto" 
+            />
+          </div>
+        </Link>
+      </div>
+
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
